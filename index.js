@@ -22,7 +22,7 @@ function epoch() {
             if (res.statusCode == 200) {
                 console.log("Message sent");
                 
-                setInterval(() => {
+                setTimeout(() => {
                     request({
                         method: "DELETE",
                         url: `https://discord.com/api/v8/channels/${body.channel_id}/messages/${body.id}`,
