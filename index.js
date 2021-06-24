@@ -30,7 +30,6 @@ function epoch() {
                 if (res.statusCode == 204) {
                     console.log("Message deleted\n");
                 } else {
-                    console.log(res.body);
                     console.log("Failed to delete message\n")
                 }
             })
