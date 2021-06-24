@@ -1,8 +1,8 @@
 const request = require('request')
 
-const interval = 2000
+const interval = 3000
 const token = "ODUwNTg4ODUzMzc4NDgyMTg2.YNP1Jg.xA_tn5vc5eTLqLd-9_x98eRVXc8"
-const channel_id = "857456055571578883"
+const channel_id = "827792818449678338"
 
 const options = {
     method: 'POST',
@@ -11,7 +11,7 @@ const options = {
         authorization: token,
         'Content-Type': 'application/json'
     },
-    body: JSON.stringify({ "content": "." })
+    body: JSON.stringify({ "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum" })
 }
 
 function epoch() {
