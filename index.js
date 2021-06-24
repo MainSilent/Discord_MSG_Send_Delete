@@ -36,7 +36,7 @@ function epoch() {
             })
         } else {
             console.log(res.body);
-            console.log("Failed to send message")
+            console.log("Failed to send message\n")
         }
     })    
 }
