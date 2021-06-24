@@ -13,7 +13,7 @@ const options = {
     },
 }
 
-function epoch() {
+async function epoch() {
     options.body = JSON.stringify({ "content": randomstring.generate(Math.floor(Math.random() * 500) + 50) })
     request(options, (err, res) => {
         if (err) console.log(err);
@@ -43,9 +43,9 @@ function epoch() {
 
 function interval(next) {
     console.log(`Next Message in ${next / 1000} seconds`)
-    
-    setTimeout(() => {
-        epoch()
+
+    setTimeout(async () => {
+        await epoch()
         next = (Math.floor(Math.random() * 18) + 10) * 1000
         interval(next)
     }, next)
