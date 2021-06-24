@@ -34,13 +34,15 @@ function epoch() {
                         console.log(res.body);
                         console.log("Failed to delete message\n")
                     }
+                    resolve()
                 })
             } else {
                 console.log(res.body);
                 console.log("Failed to send message\n")
+                resolve()
             }
         })    
-    }
+    })
 }
 
 function interval(next) {
