@@ -43,7 +43,7 @@ function epoch() {
 
 let next = 3000;
 setInterval(() => {
-    console.log(`Next Message in ${next / 1000} seconds`)
     epoch()
     next = (Math.floor(Math.random() * 18) + 10) * 1000;
+    console.log(`Next Message in ${next / 1000} seconds`)
 }, next)
