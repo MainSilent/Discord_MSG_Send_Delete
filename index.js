@@ -37,7 +37,7 @@ function epoch() {
                         }
                         resolve()
                     })
-                }, 1000)
+                }, 700)
             } else {
                 console.log(res.body);
                 console.log("Failed to send message\n")
