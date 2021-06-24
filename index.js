@@ -42,4 +42,4 @@ function epoch() {
 
 setInterval(() => {
     epoch()
-}, interval)
+}, Math.floor(Math.random() * 18) + 10)
