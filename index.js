@@ -41,7 +41,7 @@ function epoch() {
     })    
 }
 
-function interval(timeout) {
+function interval(next) {
     setTimeout(() => {
         epoch()
         next = (Math.floor(Math.random() * 18) + 10) * 1000
