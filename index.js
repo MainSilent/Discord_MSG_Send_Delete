@@ -28,9 +28,9 @@ function epoch() {
             }, (err, res) => {
                 if (err) console.log(err);
                 if (res.statusCode == 204) {
-                    console.log("Message deleted");
+                    console.log("Message deleted\n");
                 } else {
-                    console.log("Failed to delete message")
+                    console.log("Failed to delete message\n")
                 }
             })
         } else {
