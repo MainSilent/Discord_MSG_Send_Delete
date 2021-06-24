@@ -1,5 +1,6 @@
 const request = require('request')
 
+const interval = 2000
 const token = "ODUwNTg4ODUzMzc4NDgyMTg2.YNP1Jg.xA_tn5vc5eTLqLd-9_x98eRVXc8"
 const channel_id = "857456055571578883"
 
@@ -38,3 +39,6 @@ function epoch() {
     })    
 }
 
+setInterval(() => {
+    epoch()
+}, interval)
