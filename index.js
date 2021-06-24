@@ -22,21 +22,19 @@ function epoch() {
             if (res.statusCode == 200) {
                 console.log("Message sent");
                 
-                setTimeout(() => {
-                    request({
-                        method: "DELETE",
-                        url: `https://discord.com/api/v8/channels/${body.channel_id}/messages/${body.id}`,
-                        headers: { authorization: token }
-                    }, (err, res) => {
-                        if (err) console.log(err);
-                        if (res.statusCode == 204) {
-                            console.log("Message deleted\n");
-                        } else {
-                            console.log(res.body);
-                            console.log("Failed to delete message\n")
-                        }
-                        resolve()
-                    })
+                request({
+                    method: "DELETE",
+                    url: `https://discord.com/api/v8/channels/${body.channel_id}/messages/${body.id}`,
+                    headers: { authorization: token }
+                }, (err, res) => {
+                    if (err) console.log(err);
+                    if (res.statusCode == 204) {
+                        console.log("Message deleted\n");
+                    } else {
+                        console.log(res.body);
+                        console.log("Failed to delete message\n")
+                    }
+                    resolve()
                 })
             } else {
                 console.log(res.body);
