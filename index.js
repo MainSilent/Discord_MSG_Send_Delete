@@ -13,32 +13,34 @@ const options = {
     },
 }
 
-async function epoch() {
-    options.body = JSON.stringify({ "content": randomstring.generate(Math.floor(Math.random() * 500) + 50) })
-    request(options, (err, res) => {
-        if (err) console.log(err);
-        body = JSON.parse(res.body)
-        if (res.statusCode == 200) {
-            console.log("Message sent");
-    
-            request({
-                method: "DELETE",
-                url: `https://discord.com/api/v8/channels/${body.channel_id}/messages/${body.id}`,
-                headers: { authorization: token }
-            }, (err, res) => {
-                if (err) console.log(err);
-                if (res.statusCode == 204) {
-                    console.log("Message deleted\n");
-                } else {
-                    console.log(res.body);
-                    console.log("Failed to delete message\n")
-                }
-            })
-        } else {
-            console.log(res.body);
-            console.log("Failed to send message\n")
-        }
-    })    
+function epoch() {
+    return new Promise(function (resolve, reject) {
+        options.body = JSON.stringify({ "content": randomstring.generate(Math.floor(Math.random() * 500) + 50) })
+        request(options, (err, res) => {
+            if (err) console.log(err);
+            body = JSON.parse(res.body)
+            if (res.statusCode == 200) {
+                console.log("Message sent");
+        
+                request({
+                    method: "DELETE",
+                    url: `https://discord.com/api/v8/channels/${body.channel_id}/messages/${body.id}`,
+                    headers: { authorization: token }
+                }, (err, res) => {
+                    if (err) console.log(err);
+                    if (res.statusCode == 204) {
+                        console.log("Message deleted\n");
+                    } else {
+                        console.log(res.body);
+                        console.log("Failed to delete message\n")
+                    }
+                })
+            } else {
+                console.log(res.body);
+                console.log("Failed to send message\n")
+            }
+        })    
+    }
 }
 
 function interval(next) {
