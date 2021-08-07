@@ -1,8 +1,8 @@
 const request = require('request')
 const randomstring = require("randomstring");
 
-const token = "ODUwNTg4ODUzMzc4NDgyMTg2.YNP1Jg.xA_tn5vc5eTLqLd-9_x98eRVXc8"
-const channel_id = "827792818449678338"
+const token = ""
+const channel_id = ""
 
 const options = {
     method: 'POST',
